@@ -26,18 +26,21 @@ const Navbar = () => {
                 <div className='logo-home'>
                     <h2>H<span>i</span></h2>
                 </div>
+                {/* <div className="search">
 
-                {
-                    user ?
+                    {
+                        user ?
 
-                        user?.recruiter == false ?
-                            <a href="/ProductSearch"><SearchIcon sx={{ fontSize: 80, color: "white" }} /></a>
-                            :
-                            <a href="/RecruiterSearch"><SearchIcon sx={{ fontSize: 80, color: "white" }} /></a>
+                            user?.recruiter === false ?
+                                <a href="/ProductSearch"><SearchIcon sx={{ fontSize: 80, color: "white" }} /></a>
+                                :
+                                <a href="/RecruiterSearch"><SearchIcon sx={{ fontSize: 80, color: "white" }} /></a>
 
-                        : null
+                            : null
 
-                }
+                    }
+                </div> */}
+
 
 
                 {/* 2nd Menu part*/}
@@ -64,10 +67,9 @@ const Navbar = () => {
                 </div>
 
                 <div className='profile-icon'>
-                    <button className='profile-icon-btn' onClick={() => navigate("/UserProfile")}><CgProfile style={{ color: 'goldenrod', fontSize: '27px', }} /></button>
 
-                    {/* {user?.recruiter === false ?
-                        <button className='profile-icon-btn' onClick={() => navigate("/UserProfile")}><CgProfile style={{ color: 'goldenrod', fontSize: '27px', }} /></button> : null} */}
+                    {user?.recruiter === false ?
+                        <button className='profile-icon-btn' onClick={() => navigate("/UserProfile")}><CgProfile style={{ color: 'goldenrod', fontSize: '27px', }} /></button> : null}
                 </div>
             </nav>
 
