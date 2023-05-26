@@ -77,8 +77,8 @@ const Education = (props) => {
 
     useEffect(() => {
         getEducationData()
-         // ... eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [getEducationData])
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const [userInfo, setUserInfo] = useState([])
     useEffect(() => {
@@ -92,6 +92,8 @@ const Education = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
+
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const [eduData, setEduData] = useState(
@@ -104,6 +106,8 @@ const Education = (props) => {
             yearOfpassout: ''
         }
     )
+
+         // eslint-disable-next-line no-unused-vars
     const [isEditing, setIsEditing] = useState(false);
 
     function getEducationData(id) {

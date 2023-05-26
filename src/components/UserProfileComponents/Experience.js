@@ -16,20 +16,6 @@ const Experience = (props) => {
         marginTop: '18px',
     };
 
-    // const inputFieldForm = {
-    //     borderRadius: '0.2rem',
-    //     height: '21px',
-    //     width: '15rem',
-    //     border: '1px solid #245799',
-    // };
-
-    // const labelField = {
-    //     fontFamily: "'Arial', sans-serif",
-    //     margin: '17px',
-    //     color: '#072042',
-
-    // };
-
     const saveButton = {
 
         float: 'left',
@@ -68,6 +54,7 @@ const Experience = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const [expData, setExpData] = useState({})
@@ -101,6 +88,8 @@ const Experience = (props) => {
 
     useEffect(() => {
         getExperienceData()
+
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

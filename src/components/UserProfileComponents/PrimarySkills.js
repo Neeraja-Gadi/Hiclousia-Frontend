@@ -69,27 +69,9 @@ const PrimarySkills = (props) => {
     if (!user) Navigate("/login")
 
     useEffect(() => {
-
-        const  getPrimarySkills = ()=> {
-            fetch(`http://localhost:8000/primarySkills/640733704c7585182c08b68b`, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-    
-                .then((result) => result.json())
-                .then((resp) => {
-                    console.log("resp", resp)
-                    setPrimary(resp)
-                    console.log("primary", primary)
-                })
-    
-        }
-
         getPrimarySkills()
-       // ... eslint-disable-next-line react-hooks/exhaustive-deps
-    
+       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     } , [])
 
     const [userInfo, setUserInfo] = useState([])
@@ -104,6 +86,8 @@ const PrimarySkills = (props) => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
+
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 
@@ -114,7 +98,22 @@ const PrimarySkills = (props) => {
         primarySkills: ''
     })
 
-    
+    function getPrimarySkills() {
+        fetch(`http://localhost:8000/primarySkills/640733704c7585182c08b68b`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+
+            .then((result) => result.json())
+            .then((resp) => {
+                console.log("resp", resp)
+                setPrimary(resp)
+                console.log("primary", primary)
+            })
+
+    }
 
     // API End
 

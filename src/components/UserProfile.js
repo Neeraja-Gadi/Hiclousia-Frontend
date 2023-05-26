@@ -36,74 +36,9 @@ const UserProfile = () => {
         borderBottom: '1px solid #1f1209',
         boxShadow: '0 20px 20px -20px #333',
     };
-
-    // const chipStyle = {
-    //     marginTop: '19px',
-    // };
-
-
     const primaryStyle = {
         marginTop: '30px',
     }
-
-    //Primary Skills Start
-    // const [priData, setPriData] = useState([])
-
-    // function getPrimaryData() {
-    //     fetch(`http://localhost:8000/primarySkills/63f331a9870eb03618057960`, {
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //         .then((result) => result.json())
-    //         .then((resp) => {
-    //             console.log("resp", resp)
-    //             setPriData(resp)
-    //             console.log("priData", priData)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // }
-
-
-    // useEffect(() => {
-    //     getPrimaryData()
-    // }, [])
-    //Primary Skills end
-
-
-
-
-    //Secondary Skills Start
-    // const [secData, setSecData] = useState([])
-
-    // function getSecData() {
-    //     fetch(`http://localhost:8000/secondarySkills/63f331a9870eb03618057960`, {
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //         .then((result) => result.json())
-    //         .then((resp) => {
-    //             console.log("resp", resp)
-    //             setSecData(resp)
-    //             console.log("secData", secData)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // }
-
-
-    // useEffect(() => {
-    //     getSecData()
-    // }, [])
-    //Secondary Skills End
-
-
 
     const Navigate = useNavigate();
 
@@ -125,6 +60,7 @@ const UserProfile = () => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
+           // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     //Education Start
@@ -138,7 +74,11 @@ const UserProfile = () => {
     //Education Pop-Up End
 
     //Education Form Start
+
+         // eslint-disable-next-line no-unused-vars
     const [educationForm, setEducationForm] = useState(false)
+    
+    
     const EducationForm = () => {
         return <EducationForm eduForm={educationForm => setEducationForm(false)} />
     }
@@ -234,11 +174,6 @@ const UserProfile = () => {
                 </div>
 
 
-
-
-
-
-
                 <div className='edu'>
                     <h3 style={styles}>Education</h3>
 
@@ -308,6 +243,8 @@ const UserProfile = () => {
                     <button className='edit-btn' onClick={() => setExperienceMain(true)}>
                         <FiEdit2 />
                     </button>
+
+                    {experienceMain && <ExperienceMain/>}
 
                     <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setExpFormNew(true)}><GrAdd /></button>
                     {expFormNew && <ExperienceForm expFormNew={expFormNew => setExpFormNew(false)} />}

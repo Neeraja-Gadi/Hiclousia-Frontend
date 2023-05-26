@@ -29,7 +29,9 @@ const ProfilePic = () => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }, [userInfo])
+
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
 

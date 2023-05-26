@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { AiFillCloseCircle } from 'react-icons/ai'
 import { secondarySkills } from '../../constraints/arrays'
 import Multiselect from 'multiselect-react-dropdown'
 import { Container } from '@material-ui/core'
@@ -39,11 +38,6 @@ const useStyles = makeStyles({
         border: 'none',
         cursor: 'pointer',
 
-    },
-
-    container: {
-        marginTop: '28px',
-        width: '27rem',
     },
 
     save: {

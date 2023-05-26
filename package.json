@@ -38,7 +38,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ] ,
+    "rules": {
+      "my-custom-rule": "warn",
+      "no-console": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -54,6 +58,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.5",
+    "eslint": "^8.41.0",
     "tailwindcss": "^3.3.1"
   }
 }
