@@ -35,15 +35,13 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ] ,
+    "extends": ["react-app", "react-app/jest"],
+    "plugins": ["my-plugin"],
     "rules": {
-      "my-custom-rule": "warn",
+      "my-plugin/my-custom-rule": "warn",
       "no-console": "off"
     }
-  },
+  },  
   "browserslist": {
     "production": [
       ">0.2%",
