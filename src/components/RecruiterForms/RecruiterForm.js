@@ -5,9 +5,6 @@ import {
     TextField,
     Typography,
     Button,
-    InputLabel,
-    Select,
-    MenuItem,
     Box,
     Paper
 } from '@material-ui/core';

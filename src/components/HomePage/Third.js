@@ -2,13 +2,12 @@ import React from 'react';
 import '../../styles/App.css';
 import {second} from "../../images/index.js"
 
-
 function Third()
 {
     return (
         <div className="career">
             <div className="career-image">
-                <img src={second}/>
+                <img src={second} alt= ""/>
             </div>
             <div className="career-desc">
                 <div className="career-buttons">

@@ -1,45 +1,24 @@
-import React, { useState, useEffect, Component } from 'react'
-import { GiHamburgerMenu, GiSkills } from "react-icons/gi"
+import React, { useState, useEffect } from 'react'
+import {  GiSkills } from "react-icons/gi"
 import { FaBriefcase, FaUserGraduate } from "react-icons/fa"
 import { BsFillShareFill } from "react-icons/bs"
 import { GrAdd } from "react-icons/gr"
-import { IoArrowBackCircle } from "react-icons/io5"
-import { AiFillCloseCircle } from "react-icons/ai"
+// import { IoArrowBackCircle } from "react-icons/io5"
+// import { AiFillCloseCircle } from "react-icons/ai"
 import { ImFilesEmpty } from "react-icons/im"
 import { FiEdit2 } from "react-icons/fi"
-import Multiselect from "multiselect-react-dropdown"
-import { primarySkills, secondarySkills, educationLevels, experience, location } from '../constraints/arrays'
-import { slide as Menu } from 'react-burger-menu'
-import axios from 'axios'
-import { FileUpload } from 'primereact/fileupload'
-import { Dialog } from 'primereact/dialog'
-import { InputText } from 'primereact/inputtext'
 import '../styles/userProfile.css'
-import { Routes, Link, Route, useNavigate } from 'react-router-dom'
-import Select from 'react-select'
-import TextField from '@mui/material/TextField'
-import { Box, Button, Container } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
+import { useNavigate } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
-import Chip from '@mui/material/Chip'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Avatar from '@material-ui/core/Avatar'
-import avatar from "../images/avatar.jpg"
 import ProfilePic from './UserProfileComponents/ProfilePic'
 import Education from './UserProfileComponents/Education'
 import Experience from './UserProfileComponents/Experience'
 import SecondarySkills from './UserProfileComponents/SecondarySkills'
 import PrimarySkills from './UserProfileComponents/PrimarySkills'
-import EducationForm from './multiForm/EducationForm'
-import userProfileForm from './multiForm/UserProfileForm'
-import Projects from './UserProfileComponents/Projects'
 import EducationFormNew from './multiForm/EducationFormNew'
 import ProjectForm from './multiForm/ProjectForm'
 import ExperienceForm from './multiForm/ExperienceForm'
 import ProjectData from './UserProfileComponents/ProjectData/ProjectData'
-
-
-
 
 const UserProfile = () => {
 
@@ -58,9 +37,9 @@ const UserProfile = () => {
         boxShadow: '0 20px 20px -20px #333',
     };
 
-    const chipStyle = {
-        marginTop: '19px',
-    };
+    // const chipStyle = {
+    //     marginTop: '19px',
+    // };
 
 
     const primaryStyle = {
@@ -134,7 +113,7 @@ const UserProfile = () => {
 
     const [userInfo, setUserInfo] = useState([])
 
-
+    // eslint-disable-next-line
     useEffect(() => {
         // console.log(user._id)
         fetch(`http://localhost:8000/personal/${user._id}`, {
@@ -146,16 +125,15 @@ const UserProfile = () => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }, [])
-
-
-
+    },[])
 
     //Education Start
     //Education Pop-Up Start
     const [educationMain, setEducationMain] = useState(false)
     const EducationMain = () => {
-        return <Education edu={educationMain => setEducationMain(false)} />
+        console.log(educationMain)
+        return <Education edu={educationMain => setEducationMain(false) } />
+       
     }
     //Education Pop-Up End
 

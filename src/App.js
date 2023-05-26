@@ -17,7 +17,7 @@ import JobForm from  "./components/RecruiterForms/JobPostForm" ;
 import RecruiterProfileForm from "../src/components/RecruiterForms/RecruiterForm"
 
 
-import { Routes, Link, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 // import Form from './components/multiForm/MultiSelect';
 
 function App() {

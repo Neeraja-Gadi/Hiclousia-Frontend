@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { CgProfile } from 'react-icons/cg'
-import { useNavigate, Link } from "react-router-dom"
-import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from "react-router-dom"
+// import SearchIcon from '@mui/icons-material/Search';
 const Navbar = () => {
 
     const [user, setUser] = React.useState("");

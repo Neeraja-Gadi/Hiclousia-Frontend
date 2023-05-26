@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
-import { Button, TextField, Select, MenuItem, FormControl, InputLabel, FormHelperText, makeStyles, Typography } from '@material-ui/core';
+import { Button, TextField, Select, MenuItem, FormControl, InputLabel, makeStyles, Typography } from '@material-ui/core';
 import { AiFillCloseCircle } from 'react-icons/ai'
 import baseurl from '../../baseURL/config'
 
@@ -48,13 +48,15 @@ const useStyles = makeStyles((theme) => ({
 const EducationForm = (props) => {
 
   const navigate = useNavigate();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
 
     if (userId == null) {
       navigate("/login")
       alert("Please login first")
     }
-  }, [])
+  }, [navigate])
   const classes = useStyles();
 
   const [educationList, setEducationList] = useState([
@@ -107,7 +109,7 @@ const EducationForm = (props) => {
 
     educationList.map((e, index) => {
 
-      fetch(`${baseurl}/education`, {
+      return fetch(`${baseurl}/education`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

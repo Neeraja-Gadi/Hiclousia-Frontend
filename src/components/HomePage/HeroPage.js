@@ -1,27 +1,25 @@
 import React from 'react'
 import '../../styles/App.css'
-import { useEffect } from 'react'
-// import LoginCard from '../loginPage/loginCard'
-import SearchIcon from '@mui/icons-material/Search'
-import { useNavigate, Link } from "react-router-dom"
-import { AiOutlineUser } from "react-icons/"
+// import { useEffect } from 'react'
+// import { useNavigate } from "react-router-dom"
+
 import Navbar from './Navbar'
 
 
 function App() {
-  const [user, setUser] = React.useState("");
-  const navigate = useNavigate()
+  // const [user, setUser] = React.useState("");
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("userDetails")))
+  // useEffect(() => {
+  //   setUser(JSON.parse(localStorage.getItem("userDetails")))
 
-  }, [])
+  // }, [])
 
-  function logOut() {
-    localStorage.removeItem('userDetails');
-    localStorage.removeItem('token');
-    window.location.reload();
-  }
+  // function logOut() {
+  //   localStorage.removeItem('userDetails');
+  //   localStorage.removeItem('token');
+  //   window.location.reload();
+  // }
 
 
   return (

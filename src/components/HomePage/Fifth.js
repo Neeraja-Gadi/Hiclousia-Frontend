@@ -22,14 +22,14 @@ function Fifth()
             <div className="head02">
                <div className="head02-image1">
                    <div className="image11">
-                      <img src={iitmrs} />
+                      <img src={iitmrs} alt="iitm research park top view "/>
                    </div>
                    <div class="image12">
-                      <img src={iitmgate} />
+                      <img src={iitmgate} alt="iitm research park "/>
                    </div>
                 </div>
                 <div class="head02-image2">
-                      <img src={map} />
+                      <img src={map}  alt="iitm researh park location in map"/>
                 </div>
             </div>
 

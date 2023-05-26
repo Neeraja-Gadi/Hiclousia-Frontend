@@ -10,7 +10,7 @@ function Fourth() {
 
      
         <div className="nurture-01">
-          <img src={asian1} />
+          <img src={asian1} alt=""/>
         </div>
 
         <div className="nurture-02">
@@ -21,7 +21,7 @@ function Fourth() {
         </div>
 
         <div className="nurture-03">
-          <img src={asian2} />
+          <img src={asian2} alt="" />
         </div>
      
     </div>
