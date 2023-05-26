@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../../styles/userProfile.css'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import Button from '@mui/material/Button'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
@@ -14,19 +14,19 @@ const UserProfileForm = (props) => {
         marginTop: '18px',
     };
 
-    const inputFieldForm = {
-        borderRadius: '0.2rem',
-        height: '21px',
-        width: '15rem',
-        border: '1px solid #245799',
-    };
+    // const inputFieldForm = {
+    //     borderRadius: '0.2rem',
+    //     height: '21px',
+    //     width: '15rem',
+    //     border: '1px solid #245799',
+    // };
 
-    const labelField = {
-        fontFamily: "'Arial', sans-serif",
-        margin: '17px',
-        color: '#072042',
+    // const labelField = {
+    //     fontFamily: "'Arial', sans-serif",
+    //     margin: '17px',
+    //     color: '#072042',
 
-    };
+    // };
 
     const saveButton = {
 

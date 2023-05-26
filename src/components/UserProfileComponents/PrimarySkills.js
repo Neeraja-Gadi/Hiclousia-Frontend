@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { AiFillCloseCircle } from 'react-icons/ai'
 import { primarySkills } from '../../constraints/arrays'
 import Multiselect from 'multiselect-react-dropdown'
 import { Container } from '@material-ui/core'
 import Button from '@mui/material/Button'
-import { Routes, Link, Route, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles({
 
@@ -42,10 +41,10 @@ const useStyles = makeStyles({
 
     },
 
-    container: {
-        marginTop: '28px',
-        width: '27rem',
-    },
+    // container: {
+    //     marginTop: '28px',
+    //     width: '27rem',
+    // },
 
     save: {
         float: 'left',
@@ -70,9 +69,28 @@ const PrimarySkills = (props) => {
     if (!user) Navigate("/login")
 
     useEffect(() => {
-        getPrimarySkills()
-    }, [])
 
+        const  getPrimarySkills = ()=> {
+            fetch(`http://localhost:8000/primarySkills/640733704c7585182c08b68b`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+    
+                .then((result) => result.json())
+                .then((resp) => {
+                    console.log("resp", resp)
+                    setPrimary(resp)
+                    console.log("primary", primary)
+                })
+    
+        }
+
+        getPrimarySkills()
+       // ... eslint-disable-next-line react-hooks/exhaustive-deps
+    
+    } , [])
 
     const [userInfo, setUserInfo] = useState([])
     useEffect(() => {
@@ -94,29 +112,11 @@ const PrimarySkills = (props) => {
     const [primary, setPrimary] = useState({
         _id: '',
         primarySkills: ''
-
     })
 
-    function getPrimarySkills() {
-        fetch(`http://localhost:8000/primarySkills/640733704c7585182c08b68b`, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-
-            .then((result) => result.json())
-            .then((resp) => {
-                console.log("resp", resp)
-                setPrimary(resp)
-                console.log("primary", primary)
-            })
-
-    }
-
+    
 
     // API End
-
 
     const classes = useStyles()
 
@@ -137,9 +137,6 @@ const PrimarySkills = (props) => {
                     <Button variant="contained" className={classes.save}>save</Button>
                     <Button variant="contained" className={classes.cancel} onClick={() => props.primary(false)}>cancel</Button>
                 </Container>
-
-
-
 
 
             </div>

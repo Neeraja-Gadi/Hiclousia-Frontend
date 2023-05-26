@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { Button, Typography, Grid, IconButton, } from '@material-ui/core';
-import { Add, Remove, AddCircleOutline, RemoveCircleOutline } from '@material-ui/icons';
-import { useTheme } from '@mui/material/styles';
+import { Button, Typography } from '@material-ui/core';
+import { Add, Remove } from '@material-ui/icons';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -28,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
       },
       width: '70ch',
     },
-    //  width :"auto",
-    //  height : "auto",
+    
     color: theme.palette.primary.main,
     background: '#8ec9ff',
     boxShadow: '0px 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -112,7 +110,7 @@ function ExperienceForm() {
     console.log(experienceData)
     let experienceInfo = experienceData;
     experienceInfo?.map((e, index) => {
-      fetch("http://localhost:8000/experience", {
+    return  fetch("http://localhost:8000/experience", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

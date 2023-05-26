@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import '../../styles/userProfile.css'
-import Select from 'react-select'
 import TextField from '@mui/material/TextField'
-import { Box, Button, Container } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+import { Box, Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { FaBriefcase, FaUserGraduate } from "react-icons/fa"
-import { BsFillShareFill } from "react-icons/bs"
 import { IoArrowBackCircle } from "react-icons/io5"
 import { AiFillCloseCircle } from "react-icons/ai"
-import { ImFilesEmpty } from "react-icons/im"
 import { FiEdit2 } from "react-icons/fi"
-import Multiselect from "multiselect-react-dropdown"
-import { Routes, Link, Route, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const Experience = (props) => {
@@ -23,19 +16,19 @@ const Experience = (props) => {
         marginTop: '18px',
     };
 
-    const inputFieldForm = {
-        borderRadius: '0.2rem',
-        height: '21px',
-        width: '15rem',
-        border: '1px solid #245799',
-    };
+    // const inputFieldForm = {
+    //     borderRadius: '0.2rem',
+    //     height: '21px',
+    //     width: '15rem',
+    //     border: '1px solid #245799',
+    // };
 
-    const labelField = {
-        fontFamily: "'Arial', sans-serif",
-        margin: '17px',
-        color: '#072042',
+    // const labelField = {
+    //     fontFamily: "'Arial', sans-serif",
+    //     margin: '17px',
+    //     color: '#072042',
 
-    };
+    // };
 
     const saveButton = {
 
@@ -182,7 +175,7 @@ const Experience = (props) => {
         )
     }
 
-    const [showModalExperience, setShowModalExperience] = useState(false)
+    // const [showModalExperience, setShowModalExperience] = useState(false)
 
     return (
         <div className="edu-Modal-wrapper">

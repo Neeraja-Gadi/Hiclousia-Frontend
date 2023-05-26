@@ -96,7 +96,7 @@ function ProjectForm() {
     console.log(projectData)
     let projectInfo = projectData;
     projectInfo?.map((e, index) => {
-      fetch("http://localhost:8000/project", {
+     return  fetch("http://localhost:8000/project", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

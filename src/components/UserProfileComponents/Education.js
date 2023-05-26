@@ -2,32 +2,14 @@ import React, { useState, useEffect } from 'react'
 import '../../styles/userProfile.css'
 import Select from 'react-select'
 import TextField from '@mui/material/TextField'
-import { Box, Button, Container } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
+import { Box, Button } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import { FaBriefcase, FaUserGraduate } from "react-icons/fa"
-import { BsFillShareFill } from "react-icons/bs"
 import { IoArrowBackCircle } from "react-icons/io5"
 import { AiFillCloseCircle } from "react-icons/ai"
-import { ImFilesEmpty } from "react-icons/im"
 import { FiEdit2 } from "react-icons/fi"
-import Multiselect from "multiselect-react-dropdown"
-import { Routes, Link, Route, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { educationLevels } from '../../constraints/arrays'
-import styled from 'styled-components'
-import { makeStyles } from '@material-ui/core/styles'
-import FilledInput from '@mui/material/FilledInput'
-import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
-import Input from '@mui/material/Input'
-import InputLabel from '@mui/material/InputLabel'
 import OutlinedInput from '@mui/material/OutlinedInput'
-
-
-
-
-
 
 const Education = (props) => {
 
@@ -36,12 +18,12 @@ const Education = (props) => {
         marginTop: '18px',
     }
 
-    const inputFieldForm = {
-        borderRadius: '0.2rem',
-        height: '21px',
-        width: '15rem',
-        border: '1px solid #245799',
-    }
+    // const inputFieldForm = {
+    //     borderRadius: '0.2rem',
+    //     height: '21px',
+    //     width: '15rem',
+    //     border: '1px solid #245799',
+    // }
 
     const cross = {
         backgroundColor: 'transparent',
@@ -54,46 +36,40 @@ const Education = (props) => {
         marginRight: '-7px',
     };
 
-    const labelField = {
-        fontFamily: "'Arial', sans-serif",
-        margin: '17px',
-        color: '#072042',
+    // const labelField = {
+    //     fontFamily: "'Arial', sans-serif",
+    //     margin: '17px',
+    //     color: '#072042',
 
-    };
+    // };
 
     // const inputFieldForm = {
     //     height: '15px',
 
     // };
 
-    const saveButton = {
+    // const saveButton = {
 
-        float: 'left',
-        backgroundColor: '#2f6cc0',
-        fontSize: '18px',
-        textColor: 'white',
-        borderRadius: '0.3rem',
-        border: 'none',
-    }
+    //     float: 'left',
+    //     backgroundColor: '#2f6cc0',
+    //     fontSize: '18px',
+    //     textColor: 'white',
+    //     borderRadius: '0.3rem',
+    //     border: 'none',
+    // }
 
-    const cancelButton = {
+    // const cancelButton = {
 
-        float: 'right',
-        backgroundColor: '#2f6cc0',
-        fontSize: '18px',
-        textColor: 'white',
-        borderRadius: '0.3rem',
-        border: 'none',
+    //     float: 'right',
+    //     backgroundColor: '#2f6cc0',
+    //     fontSize: '18px',
+    //     textColor: 'white',
+    //     borderRadius: '0.3rem',
+    //     border: 'none',
 
-    }
-
-
-
-
+    // }
 
     //API things Start 
-
-
     const Navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("userDetails"))
     console.log('user', user)
@@ -101,7 +77,8 @@ const Education = (props) => {
 
     useEffect(() => {
         getEducationData()
-    }, [])
+         // ... eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [getEducationData])
 
     const [userInfo, setUserInfo] = useState([])
     useEffect(() => {
@@ -128,6 +105,7 @@ const Education = (props) => {
         }
     )
     const [isEditing, setIsEditing] = useState(false);
+
     function getEducationData(id) {
         fetch(`http://localhost:8000/education/${id}`, {
             headers: {
@@ -147,11 +125,10 @@ const Education = (props) => {
             })
     };
     // Function to handle changes in form values
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setEduData((prevValues) => ({ ...prevValues, [name]: value }));
-    };
-
+    // const handleInputChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setEduData((prevValues) => ({ ...prevValues, [name]: value }));
+    // };
 
     // Function to submit the form data and save it to the API
     const handleSubmit = async (id) => {
@@ -164,13 +141,8 @@ const Education = (props) => {
         });
         setIsEditing(false);
     };
-
-
+    
     //API things End
-
-
-
-
 
     const [showEducationEdit, setShowModalEdit] = useState(false)
 
@@ -222,14 +194,6 @@ const Education = (props) => {
                             </Box>
                             <br />
 
-
-                         
-
-
-                      
-                          
-                         
-
                             {/* <Select
                                 options={educationLevels}
                             />
@@ -271,7 +235,7 @@ const Education = (props) => {
         )
     }
 
-    const [showModalEducation, setShowModalEducation] = useState(false)
+    // const [showModalEducation, setShowModalEducation] = useState(false)
     return (
         <>
             <div className="edu-Modal-wrapper">

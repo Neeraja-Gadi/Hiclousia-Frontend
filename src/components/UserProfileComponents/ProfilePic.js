@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import Profile from '../../images/Profile.jpg'
 import { FiEdit2 } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
-import Grid from '@material-ui/core/Grid'
 import UserProfileForm from '../multiForm/UserProfileForm'
 
 
@@ -31,7 +29,7 @@ const ProfilePic = () => {
             .then(data => { console.log(data); setUserInfo(data.data) })
             .catch(err => console.log(err))
         console.log(userInfo)
-    }, [])
+    }, [userInfo])
 
 
 
@@ -39,7 +37,8 @@ const ProfilePic = () => {
 
 
     const [image, setImage] = useState("")
-    const [displayBasic, setDisplayBasic] = useState(false)
+    console.log(image)
+    // const [displayBasic, setDisplayBasic] = useState(false)
 
     const input = {
         marginTop: '3%',
@@ -56,7 +55,9 @@ const ProfilePic = () => {
     }
 
     //Profile Form Start
+
     const [formProfile, setFormProfile] = useState(false)
+
     //Profile Form End
 
     return (
@@ -96,10 +97,6 @@ const ProfilePic = () => {
 
 
         </div>
-
-
-
-
 
     )
 }
