@@ -1,165 +1,165 @@
-import React, { useState, useEffect } from 'react'
-import {  GiSkills } from "react-icons/gi"
-import { FaBriefcase, FaUserGraduate } from "react-icons/fa"
-import { BsFillShareFill } from "react-icons/bs"
-import { GrAdd } from "react-icons/gr"
-// import { IoArrowBackCircle } from "react-icons/io5"
-// import { AiFillCloseCircle } from "react-icons/ai"
-import { ImFilesEmpty } from "react-icons/im"
-import { FiEdit2 } from "react-icons/fi"
-import '../styles/userProfile.css'
-import { useNavigate } from 'react-router-dom'
-import Grid from '@material-ui/core/Grid'
-import ProfilePic from './UserProfileComponents/ProfilePic'
-import Education from './UserProfileComponents/Education'
-import Experience from './UserProfileComponents/Experience'
-import SecondarySkills from './UserProfileComponents/SecondarySkills'
-import PrimarySkills from './UserProfileComponents/PrimarySkills'
-import EducationFormNew from './multiForm/EducationFormNew'
-import ProjectForm from './multiForm/ProjectForm'
-import ExperienceForm from './multiForm/ExperienceForm'
-import ProjectData from './UserProfileComponents/ProjectData/ProjectData'
+// import React, { useState, useEffect } from 'react'
+// import {  GiSkills } from "react-icons/gi"
+// import { FaBriefcase, FaUserGraduate } from "react-icons/fa"
+// import { BsFillShareFill } from "react-icons/bs"
+// import { GrAdd } from "react-icons/gr"
+// // import { IoArrowBackCircle } from "react-icons/io5"
+// // import { AiFillCloseCircle } from "react-icons/ai"
+// import { ImFilesEmpty } from "react-icons/im"
+// import { FiEdit2 } from "react-icons/fi"
+// import '../styles/userProfile.css'
+// import { useNavigate } from 'react-router-dom'
+// import Grid from '@material-ui/core/Grid'
+// import ProfilePic from './UserProfileComponents/ProfilePic'
+// import Education from './UserProfileComponents/Education'
+// import Experience from './UserProfileComponents/Experience'
+// import SecondarySkills from './UserProfileComponents/SecondarySkills'
+// import PrimarySkills from './UserProfileComponents/PrimarySkills'
+// import EducationFormNew from './multiForm/EducationFormNew'
+// import ProjectForm from './multiForm/ProjectForm'
+// import ExperienceForm from './multiForm/ExperienceForm'
+// import ProjectData from './UserProfileComponents/ProjectData/ProjectData'
 
-const UserProfile = () => {
+// const UserProfile = () => {
 
 
-    const styles = {
-        color: 'black',
-        float: 'left',
-        margin: '11px',
-        fontFamily: "'Arial', Sans-serif",
+//     const styles = {
+//         color: 'black',
+//         float: 'left',
+//         margin: '11px',
+//         fontFamily: "'Arial', Sans-serif",
 
-    };
+//     };
 
-    const hrStyle = {
-        border: 'none',
-        borderBottom: '1px solid #1f1209',
-        boxShadow: '0 20px 20px -20px #333',
-    };
-    const primaryStyle = {
-        marginTop: '30px',
-    }
+//     const hrStyle = {
+//         border: 'none',
+//         borderBottom: '1px solid #1f1209',
+//         boxShadow: '0 20px 20px -20px #333',
+//     };
+//     const primaryStyle = {
+//         marginTop: '30px',
+//     }
 
-    const Navigate = useNavigate();
+//     const Navigate = useNavigate();
 
-    const user = JSON.parse(localStorage.getItem("userDetails"))
-    //  console.log(user)
-    if (!user) Navigate("/login")
+//     const user = JSON.parse(localStorage.getItem("userDetails"))
+//     //  console.log(user)
+//     if (!user) Navigate("/login")
 
-    const [userInfo, setUserInfo] = useState([])
+//     const [userInfo, setUserInfo] = useState([])
 
-    // eslint-disable-next-line
-    useEffect(() => {
-        // console.log(user._id)
-        fetch(`http://localhost:8000/personal/${user._id}`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
-            .then(response => response.json())
-            .then(data => { console.log(data); setUserInfo(data.data) })
-            .catch(err => console.log(err))
-        console.log(userInfo)
-           // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+//     // eslint-disable-next-line
+//     useEffect(() => {
+//         // console.log(user._id)
+//         fetch(`http://localhost:8000/personal/${user._id}`, {
+//             headers: {
+//                 Authorization: `Bearer ${localStorage.getItem('token')}`
+//             }
+//         })
+//             .then(response => response.json())
+//             .then(data => { console.log(data); setUserInfo(data.data) })
+//             .catch(err => console.log(err))
+//         console.log(userInfo)
+//            // eslint-disable-next-line react-hooks/exhaustive-deps
+//     },[])
 
-    //Education Start
-    //Education Pop-Up Start
-    const [educationMain, setEducationMain] = useState(false)
-    const EducationMain = () => {
-        console.log(educationMain)
-        return <Education edu={educationMain => setEducationMain(false) } />
+//     //Education Start
+//     //Education Pop-Up Start
+//     const [educationMain, setEducationMain] = useState(false)
+//     const EducationMain = () => {
+//         console.log(educationMain)
+//         return <Education edu={educationMain => setEducationMain(false) } />
        
-    }
-    //Education Pop-Up End
+//     }
+//     //Education Pop-Up End
 
-    //Education Form Start
+//     //Education Form Start
 
-         // eslint-disable-next-line no-unused-vars
-    const [educationForm, setEducationForm] = useState(false)
+//          // eslint-disable-next-line no-unused-vars
+//     const [educationForm, setEducationForm] = useState(false)
     
     
-    const EducationForm = () => {
-        return <EducationForm eduForm={educationForm => setEducationForm(false)} />
-    }
-    //Education Form End
-    //Education Start
+//     const EducationForm = () => {
+//         return <EducationForm eduForm={educationForm => setEducationForm(false)} />
+//     }
+//     //Education Form End
+//     //Education Start
 
-    //Projects Start
-    const [project, setProject] = useState(false)
+//     //Projects Start
+//     const [project, setProject] = useState(false)
 
-    //Projects End
+//     //Projects End
 
 
-    //Experience Pop-Up Start
+//     //Experience Pop-Up Start
 
-    const [experienceMain, setExperienceMain] = useState(false)
-    const ExperienceMain = () => {
-        return <Experience exp={experienceMain => setExperienceMain(false)} />
-    }
-    //Experience Pop-Up End
+//     const [experienceMain, setExperienceMain] = useState(false)
+//     const ExperienceMain = () => {
+//         return <Experience exp={experienceMain => setExperienceMain(false)} />
+//     }
+//     //Experience Pop-Up End
 
 
-    //Primary skills Start 
-    // const [primarySkillMain, setPrimarySkillMain] = useState(false)
-    // const PrimarySkillsMain = () => {
-    //     return <PrimarySkills />
-    // }
-    //Primary Skills End
+//     //Primary skills Start 
+//     // const [primarySkillMain, setPrimarySkillMain] = useState(false)
+//     // const PrimarySkillsMain = () => {
+//     //     return <PrimarySkills />
+//     // }
+//     //Primary Skills End
 
 
-    //Secondary Skills Start
-    // const [secondarySkillMain, setSecondarySkillMain] = useState(false)
-    // const SecondarySkillsMain = () => {
-    //     return <SecondarySkills />
-    // }
-    //Secondary Skills End
+//     //Secondary Skills Start
+//     // const [secondarySkillMain, setSecondarySkillMain] = useState(false)
+//     // const SecondarySkillsMain = () => {
+//     //     return <SecondarySkills />
+//     // }
+//     //Secondary Skills End
 
 
 
-    const [eduFormNew, setEduFormNew] = useState(false)
-    const [expFormNew, setExpFormNew] = useState(false)
-    const [primary, setPrimary] = useState(false)
-    const [secondary, setSecondary] = useState(false)
+//     const [eduFormNew, setEduFormNew] = useState(false)
+//     const [expFormNew, setExpFormNew] = useState(false)
+//     const [primary, setPrimary] = useState(false)
+//     const [secondary, setSecondary] = useState(false)
 
-    return (
-        <>
+//     return (
+//         <>
 
-            <nav className='main-nav'>
-                <div className='logo'>
-                    <h2>HicLOUSIA</h2>
-                </div>
+//             <nav className='main-nav'>
+//                 <div className='logo'>
+//                     <h2>HicLOUSIA</h2>
+//                 </div>
 
-                <div className='menu-link'>
-                    <ul>
-                        <li>
-                            <a href='#jobs'><FaBriefcase />Jobs</a>
-                        </li>
+//                 <div className='menu-link'>
+//                     <ul>
+//                         <li>
+//                             <a href='#jobs'><FaBriefcase />Jobs</a>
+//                         </li>
 
-                        <li>
-                            <a href='#career'><FaUserGraduate />Career Profile</a>
-                        </li>
+//                         <li>
+//                             <a href='#career'><FaUserGraduate />Career Profile</a>
+//                         </li>
 
-                        <li>
-                            <a href='#upskilling'><GiSkills />Upskilling</a>
-                        </li>
+//                         <li>
+//                             <a href='#upskilling'><GiSkills />Upskilling</a>
+//                         </li>
 
-                        <li>
-                            <a href='#share'><BsFillShareFill />Share</a>
-                        </li>
+//                         <li>
+//                             <a href='#share'><BsFillShareFill />Share</a>
+//                         </li>
 
-                        <li>
-                            <a href='#mydocs'><ImFilesEmpty />MyDocs</a>
-                        </li>
-                    </ul>
+//                         <li>
+//                             <a href='#mydocs'><ImFilesEmpty />MyDocs</a>
+//                         </li>
+//                     </ul>
 
-                    {/* <div className='hamburger-menu'>
-                        <a onClick={() => setShowMediaIcons(!showMediaIcons)}>
-                            <Menu />
-                        </a>
-                    </div> */}
-                </div>
-            </nav>
+//                     {/* <div className='hamburger-menu'>
+//                         <a onClick={() => setShowMediaIcons(!showMediaIcons)}>
+//                             <Menu />
+//                         </a>
+//                     </div> */}
+//                 </div>
+//             </nav>
 
 
 
@@ -167,165 +167,165 @@ const UserProfile = () => {
 
 
 
-            <section>
+//             <section>
 
-                <div className='Profile'>
-                    <ProfilePic />
-                </div>
+//                 <div className='Profile'>
+//                     <ProfilePic />
+//                 </div>
 
 
-                <div className='edu'>
-                    <h3 style={styles}>Education</h3>
+//                 <div className='edu'>
+//                     <h3 style={styles}>Education</h3>
 
-                    <button onClick={() => setEducationMain(true)} className='edit-btn'>
-                        <FiEdit2 />
-                    </button>
-                    {educationMain && <EducationMain />}
+//                     <button onClick={() => setEducationMain(true)} className='edit-btn'>
+//                         <FiEdit2 />
+//                     </button>
+//                     {educationMain && <EducationMain />}
 
-                    <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setEduFormNew(true)} ><GrAdd /></button>
-                    {eduFormNew && <EducationFormNew form={eduFormNew => setEduFormNew(false)} />}
+//                     <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setEduFormNew(true)} ><GrAdd /></button>
+//                     {eduFormNew && <EducationFormNew form={eduFormNew => setEduFormNew(false)} />}
 
 
 
-                    <br></br>
-                    <br></br>
+//                     <br></br>
+//                     <br></br>
 
 
-                    {userInfo.educationData?.map((education) => (
-                        <Grid item xs={8} sm={8} key={education._id} >
+//                     {userInfo.educationData?.map((education) => (
+//                         <Grid item xs={8} sm={8} key={education._id} >
 
-                            <div style={{ margin: '10%', marginTop: '2%', }}>
+//                             <div style={{ margin: '10%', marginTop: '2%', }}>
 
-                                <h5 style={{ fontFamily: "'Sans-Serif', Arial", fontSize: '18px', color: 'rgb(22 102 197)', }}>{education.educationLevel}</h5> <p style={{ fontSize: '10px', }}>from</p> <p>{education.collegeName}</p>
-                                <br></br>
-                                <hr style={hrStyle} />
-                            </div>
+//                                 <h5 style={{ fontFamily: "'Sans-Serif', Arial", fontSize: '18px', color: 'rgb(22 102 197)', }}>{education.educationLevel}</h5> <p style={{ fontSize: '10px', }}>from</p> <p>{education.collegeName}</p>
+//                                 <br></br>
+//                                 <hr style={hrStyle} />
+//                             </div>
 
 
-                        </Grid>
-                    ))}
+//                         </Grid>
+//                     ))}
 
 
-                </div>
+//                 </div>
 
 
-                <div className='projects'>
-                    <h3 style={styles}>Projects</h3>
+//                 <div className='projects'>
+//                     <h3 style={styles}>Projects</h3>
 
-                    <button className='edit-btn'>
-                        <FiEdit2 />
-                    </button>
+//                     <button className='edit-btn'>
+//                         <FiEdit2 />
+//                     </button>
 
-                    <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setProject(true)}><GrAdd /></button>
-                    {project && <ProjectForm proj={project => setProject(false)} />}
+//                     <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setProject(true)}><GrAdd /></button>
+//                     {project && <ProjectForm proj={project => setProject(false)} />}
 
-                    <ProjectData/>
+//                     <ProjectData/>
 
 
-                    {/* {userInfo.projects?.map((projects) => (
-                        <Grid item xs={8} key={projects._id}>
-                            {projects.projectTitle}
-                            {projects.description}
-                            {projects.startDate}
-                            {projects.endDate}
-                            {projects.Url}
-                            {projects.organizationName}
+//                     {/* {userInfo.projects?.map((projects) => (
+//                         <Grid item xs={8} key={projects._id}>
+//                             {projects.projectTitle}
+//                             {projects.description}
+//                             {projects.startDate}
+//                             {projects.endDate}
+//                             {projects.Url}
+//                             {projects.organizationName}
 
-                        </Grid>
-                    ))} */}
-                </div>
+//                         </Grid>
+//                     ))} */}
+//                 </div>
 
 
 
 
-                <div className='exp'>
-                    <h3 style={styles}>Experience</h3>
-                    <button className='edit-btn' onClick={() => setExperienceMain(true)}>
-                        <FiEdit2 />
-                    </button>
+//                 <div className='exp'>
+//                     <h3 style={styles}>Experience</h3>
+//                     <button className='edit-btn' onClick={() => setExperienceMain(true)}>
+//                         <FiEdit2 />
+//                     </button>
 
-                    {experienceMain && <ExperienceMain/>}
+//                     {experienceMain && <ExperienceMain/>}
 
-                    <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setExpFormNew(true)}><GrAdd /></button>
-                    {expFormNew && <ExperienceForm expFormNew={expFormNew => setExpFormNew(false)} />}
-                    {/* {expFormNew && <ExperienceForm expFormNew={expFormNew => setExpFormNew(false)}/>} */}
+//                     <button className='edit-btn' style={{ marginRight: '10px', }} onClick={() => setExpFormNew(true)}><GrAdd /></button>
+//                     {expFormNew && <ExperienceForm expFormNew={expFormNew => setExpFormNew(false)} />}
+//                     {/* {expFormNew && <ExperienceForm expFormNew={expFormNew => setExpFormNew(false)}/>} */}
 
 
-                    <br></br>
-                    <br></br>
+//                     <br></br>
+//                     <br></br>
 
 
 
-                    {userInfo.experienceData?.map((experience) => (
-                        <Grid item xs={8} sm={8} key={experience._id} >
-                            <div style={{ margin: '10%', marginTop: '6%', }}>
+//                     {userInfo.experienceData?.map((experience) => (
+//                         <Grid item xs={8} sm={8} key={experience._id} >
+//                             <div style={{ margin: '10%', marginTop: '6%', }}>
 
-                                <h5 style={{ fontFamily: "'Sans-Serif', Arial", }}>{experience.jobTitle}</h5> at <p>{experience.companyName}</p>
-                                <hr></hr>
+//                                 <h5 style={{ fontFamily: "'Sans-Serif', Arial", }}>{experience.jobTitle}</h5> at <p>{experience.companyName}</p>
+//                                 <hr></hr>
 
 
 
-                            </div>
+//                             </div>
 
-                        </Grid>
-                    ))}
+//                         </Grid>
+//                     ))}
 
-                </div>
+//                 </div>
 
 
 
-                {/*onClick={() => { setSecondarySkillMain(true); getSecData() }}*/}
+//                 {/*onClick={() => { setSecondarySkillMain(true); getSecData() }}*/}
 
 
 
 
-                <div className='primary'>
-                    <h3 style={styles} >Primary Skills</h3>
-                    <button className='edit-btn' onClick={() => setPrimary(true)}>
-                        <FiEdit2 />
-                    </button>
-                    {primary && <PrimarySkills primary={primary => setPrimary(false)} />}
+//                 <div className='primary'>
+//                     <h3 style={styles} >Primary Skills</h3>
+//                     <button className='edit-btn' onClick={() => setPrimary(true)}>
+//                         <FiEdit2 />
+//                     </button>
+//                     {primary && <PrimarySkills primary={primary => setPrimary(false)} />}
 
-                    <br></br>
-                    <br></br>
+//                     <br></br>
+//                     <br></br>
 
-                    <div className={primaryStyle}>
-                        {/* {userInfo.skills.primarySkills?.map((skill) => (
+//                     <div className={primaryStyle}>
+//                         {/* {userInfo.skills.primarySkills?.map((skill) => (
 
 
 
-                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+//                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
 
-                                {skill}
+//                                 {skill}
 
-                            </Box>
+//                             </Box>
 
 
 
-                        ))} */}
-                    </div>
+//                         ))} */}
+//                     </div>
 
 
-                </div>
+//                 </div>
 
 
 
-                <div className='secondary'>
-                    <h3 style={styles} >Secondary Skills</h3>
+//                 <div className='secondary'>
+//                     <h3 style={styles} >Secondary Skills</h3>
 
-                    <button className='edit-btn' onClick={() => setSecondary(true)}>
-                        <FiEdit2 />
-                    </button>
-                    {secondary && <SecondarySkills secondary={secondary => setSecondary(false)} />}
-                </div>
+//                     <button className='edit-btn' onClick={() => setSecondary(true)}>
+//                         <FiEdit2 />
+//                     </button>
+//                     {secondary && <SecondarySkills secondary={secondary => setSecondary(false)} />}
+//                 </div>
 
 
 
 
-            </section>
-        </>
-    )
-}
+//             </section>
+//         </>
+//     )
+// }
 
-export default UserProfile
+// export default UserProfile
 

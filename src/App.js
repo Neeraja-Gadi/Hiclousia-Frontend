@@ -3,20 +3,17 @@ import Sec from './components/HomePage/Sec';
 import Third from './components/HomePage/Third';
 import Fourth from './components/HomePage/Fourth';
 import Fifth from './components/HomePage/Fifth';
-import UserProfile from './components/UserProfile.js';
+// import UserProfile from './components/UserProfile.js';
 import LogInSignIn from './components/loginPage/LoginSignIn/LogInSignIn'
 // import JobForm from './components/formjob.js'
-import EducationForm from './components/multiForm/EducationForm';
-import ExperienceForm  from './components/multiForm/UserExperience';
+// import EducationForm from './components/multiForm/EducationForm';
+// import ExperienceForm  from './components/multiForm/UserExperience';
 import ProjectForm from "./components/multiForm/UserProjects"
-import ProductSearch from "./components/Search.js";
-import RecruiterSearch from "./components/RecruiterSearch"
+// import ProductSearch from "./components/Search.js";
+// import RecruiterSearch from "./components/RecruiterSearch"
 // import JobPostForm from  "./components/RecruiterForms/JobPostForm" ;
-import JobForm from  "./components/RecruiterForms/JobPostForm" ;
-
-import RecruiterProfileForm from "../src/components/RecruiterForms/RecruiterForm"
-
-
+// import JobForm from  "./components/RecruiterForms/JobPostForm" ;
+// import RecruiterProfileForm from "../src/components/RecruiterForms/RecruiterForm"
 import { Routes, Route } from 'react-router-dom';
 // import Form from './components/multiForm/MultiSelect';
 
@@ -35,16 +32,17 @@ function App() {
                       
                 </>} />
                 <Route path ="LogInSignIn" element={<LogInSignIn />}/>
+                <Route path= "ProjectForm" element={ <ProjectForm/>}/>   
                 
-                <Route path ="UserProfile" element={<UserProfile/>}/>
-                <Route path= "EducationForm" element={ <EducationForm/>}/>
-                <Route path= "ExperienceForm" element={ <ExperienceForm/>}/>
-                <Route path= "ProjectForm" element={ <ProjectForm/>}/>               
-                <Route path= "ProductSearch" element={ <ProductSearch/>}/>
-                <Route path= "RecruiterSearch" element={ <RecruiterSearch/>}/>
-                <Route path= "RecruiterProfileForm" element ={<RecruiterProfileForm/>}/>
+                {/* <Route path ="UserProfile" element={<UserProfile/>}/> */}
+                {/* <Route path= "EducationForm" element={ <EducationForm/>}/> */}
+                {/* <Route path= "ExperienceForm" element={ <ExperienceForm/>}/> */}
+                            
+                {/* <Route path= "ProductSearch" element={ <ProductSearch/>}/> */}
+                {/* <Route path= "RecruiterSearch" element={ <RecruiterSearch/>}/> */}
+                {/* <Route path= "RecruiterProfileForm" element ={<RecruiterProfileForm/>}/> */}
                 {/* <Route path=  "JobPostForm" element = {<JobPostForm/>}/> */}
-                <Route path=  "JobForm" element = {<JobForm/>}/>
+                {/* <Route path=  "JobForm" element = {<JobForm/>}/> */}
                 {/* <Route path=  "multiform7" element = {<Form/>}/> */}
             </Routes>
            
