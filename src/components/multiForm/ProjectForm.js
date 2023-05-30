@@ -1,94 +1,94 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import TextField from '@mui/material/TextField'
-import { Box, Button } from '@material-ui/core'
+// import React from 'react'
+// import { makeStyles } from '@material-ui/core/styles'
+// import TextField from '@mui/material/TextField'
+// import { Box, Button } from '@material-ui/core'
 
 
-const useStyles = makeStyles({
+// const useStyles = makeStyles({
 
-    modalWrapper: {
-        position: 'fixed',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        top: '0',
-        backgroundColor: 'rgba(189 , 189 , 189 , 0.9)',
-    },
+//     modalWrapper: {
+//         position: 'fixed',
+//         left: '0',
+//         right: '0',
+//         bottom: '0',
+//         top: '0',
+//         backgroundColor: 'rgba(189 , 189 , 189 , 0.9)',
+//     },
 
-    modalContainer: {
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        maxWidth: '30rem',
-        padding: '2rem 3rem',
-        borderRadius: '0.5rem',
-        backgroundColor: '#fff',
-    },
+//     modalContainer: {
+//         position: 'fixed',
+//         top: '50%',
+//         left: '50%',
+//         transform: 'translate(-50%, -50%)',
+//         maxWidth: '30rem',
+//         padding: '2rem 3rem',
+//         borderRadius: '0.5rem',
+//         backgroundColor: '#fff',
+//     },
 
-    formField: {
-        AlignItems: 'center',
-        marginTop: '18px',
-        width: '25rem',
-    },
+//     formField: {
+//         AlignItems: 'center',
+//         marginTop: '18px',
+//         width: '25rem',
+//     },
 
-    save: {
-        float: 'left',
-        cursor: 'pointer',
-    },
-    cancel: {
-        float: 'right',
-        cursor: 'pointer',
-    }
-
-
-})
+//     save: {
+//         float: 'left',
+//         cursor: 'pointer',
+//     },
+//     cancel: {
+//         float: 'right',
+//         cursor: 'pointer',
+//     }
 
 
-const ProjectForm = (props) => {
-
-    const classes = useStyles()
-
-    return (
-        <div className={classes.modalWrapper}>
-            <div className={classes.modalContainer}>
-                <form className={classes.formField} >
-
-                    <Box mb={2}>
-                        <TextField fullWidth label="Project Title" />
-                    </Box>
-                    <br />
+// })
 
 
-                    <Box mb={2}>
-                        <label>Start Date</label>
-                        <TextField fullWidth type='date' />
-                    </Box>
-                    <br />
+// const ProjectForm = (props) => {
 
-                    <Box mb={2}>
-                        <label>End Date</label>
-                        <TextField fullWidth type='date' />
-                    </Box>
-                    <br />
+//     const classes = useStyles()
 
-                    <Box mb={2}>
-                        <TextField fullWidth label="Organization Name" />
-                    </Box>
-                    <br />
+//     return (
+//         <div className={classes.modalWrapper}>
+//             <div className={classes.modalContainer}>
+//                 <form className={classes.formField} >
+
+//                     <Box mb={2}>
+//                         <TextField fullWidth label="Project Title" />
+//                     </Box>
+//                     <br />
+
+
+//                     <Box mb={2}>
+//                         <label>Start Date</label>
+//                         <TextField fullWidth type='date' />
+//                     </Box>
+//                     <br />
+
+//                     <Box mb={2}>
+//                         <label>End Date</label>
+//                         <TextField fullWidth type='date' />
+//                     </Box>
+//                     <br />
+
+//                     <Box mb={2}>
+//                         <TextField fullWidth label="Organization Name" />
+//                     </Box>
+//                     <br />
 
             
-                    <Box mb={2} >
-                        <TextField
-                            id="outlined-multiline-static"
-                            style={{width: '100%',}}
-                            label="Description"
-                            multiline
-                            rows={4}
-                            defaultValue="Deescription"
-                        />
-                    </Box>
-                    <br />
+//                     <Box mb={2} >
+//                         <TextField
+//                             id="outlined-multiline-static"
+//                             style={{width: '100%',}}
+//                             label="Description"
+//                             multiline
+//                             rows={4}
+//                             defaultValue="Deescription"
+//                         />
+//                     </Box>
+//                     <br />
 
 
 
@@ -96,15 +96,15 @@ const ProjectForm = (props) => {
 
 
 
-                    <Button variant="contained" className={classes.save} >save</Button>
-                    <Button variant="contained" className={classes.cancel} onClick={() => props.proj(false)}>cancel</Button>
+//                     <Button variant="contained" className={classes.save} >save</Button>
+//                     <Button variant="contained" className={classes.cancel} onClick={() => props.proj(false)}>cancel</Button>
 
-                </form>
+//                 </form>
 
 
-            </div>
-        </div>
-    )
-}
+//             </div>
+//         </div>
+//     )
+// }
 
-export default ProjectForm
+// export default ProjectForm
