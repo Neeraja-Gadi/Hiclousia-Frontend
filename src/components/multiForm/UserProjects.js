@@ -1033,6 +1033,7 @@ import { Button, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import baseurl from "../../baseURL/config"
 
 const theme = createTheme();
 
@@ -1113,7 +1114,7 @@ const ProjectForm = (props) => {
     console.log(projectData)
     let projectInfo = projectData;
     projectInfo?.map((e, index) => {
-     return  fetch("http://localhost:8000/project", {
+     return  fetch( `${baseurl}/project`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
